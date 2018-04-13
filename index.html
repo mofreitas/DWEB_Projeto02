@@ -10,14 +10,25 @@
 		<script src="js/popper.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Pacifico" />
 		<script>
-			$(document).ready(function(){
-				$(".links").click(function(){
-					var titulo = $(this).find('.card-title').text();					
-					var img = $(this).find('.containerimgs img').attr("src");
-					$('#modal-image').attr("src", img);					
-					$('.modal-title').text(titulo);
-				});
-			});
+			$(window).resize(linkEndereco);
+			$(document).ready(linkEndereco);
+			
+			function linkEndereco(){			
+				if($(window).width() < 558){
+					$('.links').attr("data-toggle", "");	
+					$('.links').attr("data-target", "");					
+				}
+				else{					
+					$('.links').attr("data-toggle", "modal");	
+					$('.links').attr("data-target", "#myModal");
+					$(".links").click(function(){
+						var titulo = $(this).find('.card-title').text();
+						var img = $(this).find('.containerimgs img').attr("src");
+						$('#modal-image').attr("src", img);	
+						$('.modal-title').text(titulo);
+					});
+				}
+			}
 		</script>
 	</HEAD>
 	
@@ -57,7 +68,7 @@
   		<div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<a class="nav-link" href="#">Produtos</a>
+						<a class="nav-link" href="#pro">Produtos</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="about.html">Quem sou eu</a>
@@ -81,46 +92,172 @@
 		</DIV>
 		
 		<div class="container" style="padding: 20px;">
-			<h3 style="margin: 20px 20px 20px 0px;">Produtos</h3>
+			<h3 id="pro" style="margin: 20px 20px 20px 0px;">Produtos</h3>
 			<div class="row">
 				<div class="col-sm-6 col-md-4 col-lg-3">
-					<a class="links" href="hhtps://www.google.com" data-toggle="modal" data-target="#myModal">
+					<a class="links" href="contact.html" data-toggle="modal" data-target="#myModal">
 						<div class="card" style="padding:10px;">
   						<div class="containerimgs">
 								<div class="dummy"></div>
   							<img src="images/imgteste.jpg" alt="Card image">
 							</div>
 							<div class="card-body">
-   							<h6 class="card-title" style="height:4em;">Camisa Oakley (Azul, preta, vermelha) (pp, p, g, gg, md)</h6>
-								<h3 class="card-text"><b>R$ 200.00</b></h3>
+   							<h6 class="card-title" style="height:4em;">Camisa WC (Azul, preta, vermelha) (p, g, gg)</h6>
+								<h3 class="card-text"><b>R$ 100.00</b></h3>
 							</div>
 						</div>
 					</a>					
 				</div>
 				<div class="col-sm-6 col-md-4 col-lg-3">
-					<a class="links" href="hhtps://www.google.com" data-toggle="modal" data-target="#myModal">
+					<a class="links" href="contact.html" data-toggle="modal" data-target="#myModal">
 						<div class="card" style="padding:10px;">
   						<div class="containerimgs">
 								<div class="dummy"></div>
   							<img src="images/imgteste2.png" alt="Card image">
 							</div>
 							<div class="card-body">
-   							<h6 class="card-title" style="height:4em;">Camisa manga longa com cetim e camurça</h6>
+   							<h6 class="card-title" style="height:4em;">Camisa de algodão simples (p, m, g)</h6>
+								<h3 class="card-text"><b>R$ 79.90</b></h3>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-6 col-md-4 col-lg-3">
+					<a class="links" href="contact.html" data-toggle="modal" data-target="#myModal">
+						<div class="card" style="padding:10px;">
+							<div class="containerimgs">
+								<div class="dummy"></div>
+  							<img src="images/imgteste3.jpg" alt="Card image">
+							</div>
+							<div class="card-body">
+   							<h6 class="card-title" style="height:4em;">Camisa gola polo (m, g, gg)</h6>
+								<h3 class="card-text"><b>R$ 100.00</b></h3>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-6 col-md-4 col-lg-3">
+					<a class="links" href="contact.html" data-toggle="modal" data-target="#myModal">
+						<div class="card" style="padding:10px;">
+							<div class="containerimgs">
+								<div class="dummy"></div>
+  							<img src="images/roupa8.jpg" alt="Card image">
+							</div>
+							<div class="card-body">
+   							<h6 class="card-title" style="height:4em;">Camisa manga longa Denim (azul, vermelha, amarela) (g, gg, eg)</h6>
+								<h3 class="card-text"><b>R$ 80.00</b></h3>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-6 col-md-4 col-lg-3">
+					<a class="links" href="contact.html" data-toggle="modal" data-target="#myModal">
+						<div class="card" style="padding:10px;">
+							<div class="containerimgs">
+								<div class="dummy"></div>
+  							<img src="images/roupa2.jpg" alt="Card image">
+							</div>
+							<div class="card-body">
+   							<h6 class="card-title" style="height:4em;">Camisa Gola polo (p, m, g)</h6>
+								<h3 class="card-text"><b>R$ 60.90</b></h3>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-6 col-md-4 col-lg-3">
+					<a class="links" href="contact.html" data-toggle="modal" data-target="#myModal">
+						<div class="card" style="padding:10px;">
+							<div class="containerimgs">
+								<div class="dummy"></div>
+  							<img src="images/roupa3.jpg" alt="Card image">
+							</div>
+							<div class="card-body">
+   							<h6 class="card-title" style="height:4em;">Blusa feminina (rosa, azul, verde) (pp, p, m, g)</h6>
+								<h3 class="card-text"><b>R$ 90.00</b></h3>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-6 col-md-4 col-lg-3">
+					<a class="links" href="contact.html" data-toggle="modal" data-target="#myModal">
+						<div class="card" style="padding:10px;">
+							<div class="containerimgs">
+								<div class="dummy"></div>
+  							<img src="images/roupa4.jpeg" alt="Card image">
+							</div>
+							<div class="card-body">
+   							<h6 class="card-title" style="height:4em;">Blusa barbie rosa (pp, p, m, g)</h6>
+								<h3 class="card-text"><b>R$ 115.00</b></h3>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-6 col-md-4 col-lg-3">
+					<a class="links" href="contact.html" data-toggle="modal" data-target="#myModal">
+						<div class="card" style="padding:10px;">
+							<div class="containerimgs">
+								<div class="dummy"></div>
+  							<img src="images/roupa7.jpeg" alt="Card image">
+							</div>
+							<div class="card-body">
+   							<h6 class="card-title" style="height:4em;">Casaco laranja (m, g, gg)</h6>
+								<h3 class="card-text"><b>R$ 150.50</b></h3>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-6 col-md-4 col-lg-3">
+					<a class="links" href="contact.html" data-toggle="modal" data-target="#myModal">
+						<div class="card" style="padding:10px;">
+							<div class="containerimgs">
+								<div class="dummy"></div>
+  							<img src="images/roupa6.jpg" alt="Card image">
+							</div>
+							<div class="card-body">
+   							<h6 class="card-title" style="height:4em;">Casaco preto (p, m, gg)</h6>
 								<h3 class="card-text"><b>R$ 200.00</b></h3>
 							</div>
 						</div>
 					</a>
 				</div>
 				<div class="col-sm-6 col-md-4 col-lg-3">
-					<a class="links" href="hhtps://www.google.com" data-toggle="modal" data-target="#myModal">
+					<a class="links" href="contact.html" data-toggle="modal" data-target="#myModal">
 						<div class="card" style="padding:10px;">
 							<div class="containerimgs">
 								<div class="dummy"></div>
-  							<img src="images/imgteste3.jpg" data-zoom="images/imgteste3.jpg" alt="Card image">
+  							<img src="images/roupa9.jpg" alt="Card image">
 							</div>
 							<div class="card-body">
-   							<h6 class="card-title" style="height:4em;">Camisa manga longa com cetim e camurça</h6>
-								<h3 class="card-text"><b>R$ 200.00</b></h3>
+   							<h6 class="card-title" style="height:4em;">Camisa manga longa quadriculada (p, m, g, gg)</h6>
+								<h3 class="card-text"><b>R$ 170.00</b></h3>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-6 col-md-4 col-lg-3">
+					<a class="links" href="contact.html" data-toggle="modal" data-target="#myModal">
+						<div class="card" style="padding:10px;">
+							<div class="containerimgs">
+								<div class="dummy"></div>
+  							<img src="images/roupa10.jpg" alt="Card image">
+							</div>
+							<div class="card-body">
+   							<h6 class="card-title" style="height:4em;">Bermuda jeans (m, g, gg)</h6>
+								<h3 class="card-text"><b>R$ 170.00</b></h3>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-6 col-md-4 col-lg-3">
+					<a class="links" href="contact.html" data-toggle="modal" data-target="#myModal">
+						<div class="card" style="padding:10px;">
+							<div class="containerimgs">
+								<div class="dummy"></div>
+  							<img src="images/roupa11.jpg" alt="Card image">
+							</div>
+							<div class="card-body">
+   							<h6 class="card-title" style="height:4em;">Camisa manga curta (p, m, g, gg)</h6>
+								<h3 class="card-text"><b>R$ 170.00</b></h3>
 							</div>
 						</div>
 					</a>
